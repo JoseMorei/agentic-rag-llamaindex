@@ -1,6 +1,6 @@
 # agentic-rag-llamaindex
+This code builds a **practical Agentic RAG system (“Alfred”)** that:  * integrates multiple tools (RAG over custom data, web search, weather, etc.), * retrieves structured + real-time information, * and answers user queries by **choosing the right tool/workflow at runtime**.
 
-This code builds a **practical Agentic RAG system ("Alfred")** that integrates multiple tools (RAG over custom data, web search, weather, etc.), retrieves structured + real-time information, and answers user queries by **choosing the right tool/workflow at runtime**.
 
 **Agentic RAG (short technical view)**
 Agentic RAG extends classic Retrieval-Augmented Generation by adding an **agent layer (LLM with tool-use + planning)** on top of retrieval. Instead of a fixed pipeline (retrieve → stuff context → generate), the model can **decide dynamically**:
@@ -16,11 +16,14 @@ This turns RAG into a **closed-loop reasoning system** where the LLM orchestrate
 
 **What this project is about**
 
-The concrete use case is a **"gala assistant agent"** that:
+The concrete use case is a **”gala assistant agent”** that:
 
 * manages guest knowledge, schedules, and context,
 * retrieves relevant info on demand using BM25 search over a guest dataset,
 * and handles dynamic queries during the event ([Hugging Face][2]).
+
+[1]: https://huggingface.co/learn/agents-course/en/unit3/agentic-rag/agentic-rag?utm_source=chatgpt.com “Agentic Retrieval Augmented Generation (RAG) · Hugging Face”
+[2]: https://huggingface.co/learn/agents-course/en/unit3/agentic-rag/introduction?utm_source=chatgpt.com “Introduction to Use Case for Agentic RAG · Hugging Face”
 
 ---
 
@@ -73,6 +76,3 @@ pip install datasets llama-index llama-index-retrievers-bm25 llama-index-llms-ol
 ```bash
 python3 main.py
 ```
-
-[1]: https://huggingface.co/learn/agents-course/en/unit3/agentic-rag/agentic-rag?utm_source=chatgpt.com "Agentic Retrieval Augmented Generation (RAG) · Hugging Face"
-[2]: https://huggingface.co/learn/agents-course/en/unit3/agentic-rag/introduction?utm_source=chatgpt.com "Introduction to Use Case for Agentic RAG · Hugging Face"
